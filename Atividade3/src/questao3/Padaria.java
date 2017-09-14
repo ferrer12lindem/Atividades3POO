@@ -30,7 +30,7 @@ public class Padaria {
 				cooking = new Baunilha();
 				System.out.println("Sabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-				System.out.print("Você deseja escolher um adicional[sim ou não]? ");
+				System.out.print("Você deseja escolher um adicional [sim ou não]? ");
 				optionBoolean = leitor.nextLine();
 
 				if (optionBoolean.equals("sim")) {
@@ -43,28 +43,34 @@ public class Padaria {
 						cooking = new ChocolateDecorator(new Baunilha());
 						System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-						System.out.println("E deseja escolha uma fruta?[sim ou não]?");
+						System.out.println("E deseja escolher uma fruta? [sim ou não]?");
 						optEscolheFruit = leitor.nextLine();
 
 						if (optEscolheFruit.equals("sim")) {
 
-							System.out.print("\n1 Morango\n2 Amora\n3 Pêssego\n\nEscolha sua fruta: ");
-							optionEscolhaSuaFruit = Integer.parseInt(leitor.nextLine());
+								System.out.print("\n1 Morango\n2 Amora\n3 Pêssego\n\nEscolha sua fruta: ");
+								optionEscolhaSuaFruit = Integer.parseInt(leitor.nextLine());
 
-							if (optionEscolhaSuaFruit == 1) {
+								if (optionEscolhaSuaFruit == 1) {
+                                    
+					
+									cooking = new FrutaMorango(new ChocolateDecorator(new Baunilha()));
+									System.out.println(
+											"\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-								cooking = new FrutaMorango(new ChocolateDecorator(new Baunilha()));
-								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+								} else if (optionEscolhaSuaFruit == 2) {
 
-							} else if (optionEscolhaSuaFruit == 2) {
+									cooking = new FrutaAmora(new ChocolateDecorator(new Baunilha()));
+									System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+								} else if (optionEscolhaSuaFruit == 3) {
 
-								cooking = new FrutaAmora(new ChocolateDecorator(new Baunilha()));
-								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
-							} else if (optionEscolhaSuaFruit == 3) {
-
-								cooking = new FrutaPessego(new ChocolateDecorator(new Baunilha()));
-								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
-							}
+									cooking = new FrutaPessego(new ChocolateDecorator(new Baunilha()));
+									System.out.println(
+											"\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+								}else {
+									System.out.println("Opção inválida");
+								}
+								
 						} else if (optEscolheFruit.equals("não")) {
 							System.out.println("Ok então!");
 
@@ -77,7 +83,7 @@ public class Padaria {
 						cooking = new DoceLeiteDecorator(new Baunilha());
 						System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-						System.out.println("E deseja escolha uma fruta?[sim ou não]?");
+						System.out.println("E deseja escolher uma fruta? [sim ou não]?");
 						optEscolheFruit = leitor.nextLine();
 
 						if (optEscolheFruit.equals("sim")) {
@@ -98,7 +104,10 @@ public class Padaria {
 
 								cooking = new FrutaPessego(new DoceLeiteDecorator(new Baunilha()));
 								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+							}else {
+								System.out.println("Opção inválida");
 							}
+							
 						} else if (optEscolheFruit.equals("não")) {
 							System.out.println("Ok então!");
 
@@ -111,7 +120,7 @@ public class Padaria {
 						cooking = new MorangoDecorator(new Baunilha());
 						System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-						System.out.println("E deseja escolha uma fruta?[sim ou não]?");
+						System.out.println("E deseja escolher uma fruta? [sim ou não]?");
 						optEscolheFruit = leitor.nextLine();
 
 						if (optEscolheFruit.equals("sim")) {
@@ -132,6 +141,8 @@ public class Padaria {
 
 								cooking = new FrutaPessego(new MorangoDecorator(new Baunilha()));
 								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+							}else {
+								System.out.println("Opção inválida");
 							}
 						} else if (optEscolheFruit.equals("não")) {
 
@@ -141,6 +152,8 @@ public class Padaria {
 							System.out.println("Opção inválida\nDigite apenas sim ou não");
 						}
 
+					}else {
+						System.out.println("Opção é inválida");
 					}
 
 				} else if (optionBoolean.equals("não")) {
@@ -170,7 +183,7 @@ public class Padaria {
 						cooking = new ChocolateDecorator(new Chocolate());
 						System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-						System.out.println("E deseja escolha uma fruta?[sim ou não]?");
+						System.out.println("E deseja escolher uma fruta? [sim ou não]?");
 						optEscolheFruit = leitor.nextLine();
 
 						if (optEscolheFruit.equals("sim")) {
@@ -191,7 +204,10 @@ public class Padaria {
 
 								cooking = new FrutaPessego(new ChocolateDecorator(new Chocolate()));
 								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+							}else {
+								System.out.println("Opção inválida");
 							}
+							
 						} else if (optEscolheFruit.equals("não")) {
 							System.out.println("Ok então!");
 
@@ -204,7 +220,7 @@ public class Padaria {
 						cooking = new DoceLeiteDecorator(new Chocolate());
 						System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-						System.out.println("E deseja escolha uma fruta?[sim ou não]?");
+						System.out.println("E deseja escolher uma fruta? [sim ou não]?");
 						optEscolheFruit = leitor.nextLine();
 
 						if (optEscolheFruit.equals("sim")) {
@@ -225,7 +241,10 @@ public class Padaria {
 
 								cooking = new FrutaPessego(new DoceLeiteDecorator(new Chocolate()));
 								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+							}else {
+							    System.out.println("opção inválida");	
 							}
+							
 						} else if (optEscolheFruit.equals("não")) {
 							System.out.println("Ok então!");
 
@@ -238,7 +257,7 @@ public class Padaria {
 						cooking = new MorangoDecorator(new Chocolate());
 						System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-						System.out.println("E deseja escolha uma fruta?[sim ou não]?");
+						System.out.println("E deseja escolher uma fruta? [sim ou não]?");
 						optEscolheFruit = leitor.nextLine();
 
 						if (optEscolheFruit.equals("sim")) {
@@ -259,7 +278,10 @@ public class Padaria {
 
 								cooking = new FrutaPessego(new MorangoDecorator(new Chocolate()));
 								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+							}else {
+							    System.out.println("Opção inválida");	
 							}
+							
 						} else if (optEscolheFruit.equals("não")) {
 							System.out.println("Ok então!");
 
@@ -267,6 +289,8 @@ public class Padaria {
 							System.out.println("Opção inválida\nDigite apenas sim ou não");
 						}
 
+					}else {
+						System.out.println("Opção é inválida");
 					}
 
 				} else if (optionBoolean.equals("não")) {
@@ -296,7 +320,7 @@ public class Padaria {
 						cooking = new ChocolateDecorator(new Laranja());
 						System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-						System.out.println("E deseja escolha uma fruta?[sim ou não]?");
+						System.out.println("E deseja escolher uma fruta? [sim ou não]?");
 						optEscolheFruit = leitor.nextLine();
 
 						if (optEscolheFruit.equals("sim")) {
@@ -317,7 +341,10 @@ public class Padaria {
 
 								cooking = new FrutaPessego(new ChocolateDecorator(new Laranja()));
 								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+							}else {
+								System.out.println("Opção inválida");
 							}
+							
 						} else if (optEscolheFruit.equals("não")) {
 							System.out.println("Ok então!");
 
@@ -329,7 +356,7 @@ public class Padaria {
 
 						cooking = new DoceLeiteDecorator(new Laranja());
 						System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
-						System.out.println("E deseja escolha uma fruta?[sim ou não]?");
+						System.out.println("E deseja escolher uma fruta? [sim ou não]?");
 						optEscolheFruit = leitor.nextLine();
 
 						if (optEscolheFruit.equals("sim")) {
@@ -351,7 +378,10 @@ public class Padaria {
 
 								cooking = new FrutaPessego(new DoceLeiteDecorator(new Laranja()));
 								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+							}else {
+								System.out.println("Opção inválida");
 							}
+							
 						} else if (optEscolheFruit.equals("não")) {
 							System.out.println("Ok então!");
 
@@ -364,7 +394,7 @@ public class Padaria {
 						cooking = new MorangoDecorator(new Laranja());
 						System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-						System.out.println("E deseja escolha uma fruta?[sim ou não]?");
+						System.out.println("E deseja escolher uma fruta? [sim ou não]?");
 						optEscolheFruit = leitor.nextLine();
 
 						if (optEscolheFruit.equals("sim")) {
@@ -385,7 +415,10 @@ public class Padaria {
 
 								cooking = new FrutaPessego(new MorangoDecorator(new Laranja()));
 								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+							}else {
+								System.out.println("Opção inválida");
 							}
+							
 						} else if (optEscolheFruit.equals("não")) {
 							System.out.println("Ok então!");
 
@@ -393,6 +426,8 @@ public class Padaria {
 							System.out.println("Opção inválida\nDigite apenas sim ou não");
 						}
 
+					}else {
+						System.out.println("Opção é inválida");
 					}
 
 				} else if (optionBoolean.equals("não")) {
@@ -422,7 +457,7 @@ public class Padaria {
 						cooking = new ChocolateDecorator(new Limao());
 						System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-						System.out.println("E deseja escolha uma fruta?[sim ou não]?");
+						System.out.println("E deseja escolher uma fruta? [sim ou não]?");
 						optEscolheFruit = leitor.nextLine();
 
 						if (optEscolheFruit.equals("sim")) {
@@ -443,7 +478,10 @@ public class Padaria {
 
 								cooking = new FrutaPessego(new ChocolateDecorator(new Limao()));
 								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+							}else {
+								System.out.println("Opção inválida");
 							}
+							
 						} else if (optEscolheFruit.equals("não")) {
 							System.out.println("Ok então!");
 
@@ -456,7 +494,7 @@ public class Padaria {
 						cooking = new DoceLeiteDecorator(new Limao());
 						System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-						System.out.println("E deseja escolha uma fruta?[sim ou não]?");
+						System.out.println("E deseja escolher uma fruta? [sim ou não]?");
 						optEscolheFruit = leitor.nextLine();
 
 						if (optEscolheFruit.equals("sim")) {
@@ -477,7 +515,10 @@ public class Padaria {
 
 								cooking = new FrutaPessego(new DoceLeiteDecorator(new Limao()));
 								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+							}else {
+								System.out.println("Opção inválida");
 							}
+							
 						} else if (optEscolheFruit.equals("não")) {
 							System.out.println("Ok então!");
 
@@ -490,7 +531,7 @@ public class Padaria {
 						cooking = new MorangoDecorator(new Limao());
 						System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
 
-						System.out.println("E deseja escolha uma fruta?[sim ou não]?");
+						System.out.println("E deseja escolher uma fruta? [sim ou não]?");
 						optEscolheFruit = leitor.nextLine();
 
 						if (optEscolheFruit.equals("sim")) {
@@ -511,14 +552,20 @@ public class Padaria {
 
 								cooking = new FrutaPessego(new MorangoDecorator(new Limao()));
 								System.out.println("\nSabor: " + cooking.getSabor() + "\nPreço: " + cooking.getCusto());
+							}else {
+								System.out.println("Opção inválida");
 							}
+							
 						} else if (optEscolheFruit.equals("não")) {
 							System.out.println("Ok então!");
 
 						} else {
 							System.out.println("Opção inválida\nDigite apenas sim ou não");
 						}
+					}else {
+						System.out.println("Opção é inválida");
 					}
+					
 				} else if (optionBoolean.equals("não")) {
 					System.out.println("Então... Tudo bem");
 

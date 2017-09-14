@@ -1,3 +1,4 @@
+
 package questao6;
 
 public class MeuCinema {
@@ -6,54 +7,26 @@ public class MeuCinema {
 
 		//Criando os objetos
 		
-		DVDPlayer dvd = new DVDPlayer("Dvd samsung");
+		DVDPlayer dvd = new DVDPlayer("Dvd Samsung");
 		LuzAmbiente iluminacao = new LuzAmbiente("Iluminacao do cinema");
-		Projetor projetor = new Projetor("Projetor sony", dvd);
-		Amplificador ampl = new Amplificador("Amplificador de audio", dvd);
-		Tela tela = new Tela("tela para projeção de filmes");
+		Projetor projetor = new Projetor("Projetor Sony", dvd);
+		Amplificador ampl = new Amplificador("Amplificador de áudio", dvd);
+		Tela tela = new Tela("Tela para projeção de filmes");
 		Pipoqueira pipoca = new Pipoqueira("Quero pipoca!");
 		
-		//Para assistir a um filme.....
-		pipoca.on();
-		pipoca.fazerPipoca();
+		HomeTheaterFacade homeTheater = new HomeTheaterFacade(ampl, dvd,iluminacao, pipoca, projetor, tela);
 		
-		iluminacao.on();
-		iluminacao.luminosidadeBaixa();
+		System.out.println("\t\t\t========================");
+		System.out.println("\t\t\t  VOU VER O FILME ......");
+		System.out.println("\t\t\t========================\n\n");
 		
-		tela.descer();
+		homeTheater.assistirFilme();
 		
-		projetor.on();
-		projetor.modoWideScreen();
+		System.out.println("\n\n\t\t\t========================");
+		System.out.println("\t\t\t       FIM DE FILME ......");
+		System.out.println("\t\t\t========================\n");
 		
-		ampl.on();
-		ampl.somStereo();
-		ampl.setVolume(10);
-		
-		dvd.on();
-		dvd.play("E o vento levou.....");
-		
-		System.out.println("========================");
-		System.out.println(" vou ver o filme ......");
-		System.out.println("========================");
-		
-		//Para terminar o filme.....
-		pipoca.off();
-		
-		iluminacao.luminosidadeAlta();
-		
-		tela.subir();
-		
-		projetor.off();
-		
-		ampl.off();
-		
-		dvd.eject();
-		dvd.off();
-	
-		System.out.println("========================");
-		System.out.println(" fim do filme ......");
-		System.out.println("========================");
-
+		homeTheater.pararFilme();
 	}
 
 }

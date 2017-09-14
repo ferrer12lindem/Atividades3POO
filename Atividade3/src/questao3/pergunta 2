@@ -1,0 +1,3 @@
+Porque quando se referimos à código aberto deve ser justamente aquele que pode ser extendido e não modificado em  de prejuízos tanto ao programador qaunto ao usuário final, devemos mantê-lo encapsulado para quaisquer modificação indesejada que possa levar ao insucesso de um software.
+Adicionar mais um sabor, iria tornar o código mais complexo, criar novos objetos para o encaixe algo que não busca programar para uma "Superclasse" que é um princípio de bom funcionamento e eficiência de um código, o programa poderia mostrar resultado do custo total do bolo incoerente, 
+e com repetições de preços de certos adicionais, o que não é o que se quer, mas sim resultados que se espera ter, sem prejuízos alheios.

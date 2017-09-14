@@ -9,122 +9,137 @@ public class Main {
 		Scanner leitor = new Scanner(System.in);
 		int option = 0;
 		String opcao = "";
+		boolean terminou = false;
 		boolean acabou = false;
 		NumeroUm numeroUm = new Chaves();
-			
 
-		System.out.print("\nEscolha a opção:\n\n1 Parênteses\n2 Chaves\n3 Colchetes: ");
-		option = Integer.parseInt(leitor.nextLine());
-		
-		switch (option) {
+			System.out.print("\nEscolha a opção:\n\n1 Parênteses\n2 Chaves\n3 Colchetes\n4 Sair\nEscolha um: ");
+			option = Integer.parseInt(leitor.nextLine());
 
-		case 1:
+			switch (option) {
 
-			numeroUm = new Parenteses();
-			System.out.println("Parênteses...");
+			case 1:
 
-			do {
+				numeroUm = new Parenteses();
+				System.out.println("Parênteses...");
 
-				System.out
-						.println("\nEscolha com quem decorar ou cancele:\n1 Parênteses\n2 Chaves\n3 Colchetes\n4 Sair");
-				opcao = leitor.nextLine();
+				do {
 
-				if (opcao.equals("1")) {
+					System.out.println(
+							"\nEscolha com quem decorar ou cancele:\n1 Parênteses\n2 Chaves\n3 Colchetes\n4 Sair");
+					opcao = leitor.nextLine();
 
-					numeroUm = new ParentesesDecorator(numeroUm);
-					System.out
-							.println("\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
+					if (opcao.equals("1")) {
 
-				} else if (opcao.equals("2")) {
+						numeroUm = new ParentesesDecorator(numeroUm);
+						System.out.println(
+								"\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
 
-					numeroUm = new ChavesDecorator(numeroUm);
-					System.out
-							.println("\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
+					} else if (opcao.equals("2")) {
 
-				} else if (opcao.equals("3")) {
+						numeroUm = new ChavesDecorator(numeroUm);
+						System.out.println(
+								"\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
 
-					numeroUm = new ColchetesDecorator(numeroUm);
-					System.out
-							.println("\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
+					} else if (opcao.equals("3")) {
 
-				} else if (opcao.equals("4")) {
-					System.out.println("Saindo do Game...");
-					acabou = true;
-				}
-			} while (acabou != true);
+						numeroUm = new ColchetesDecorator(numeroUm);
+						System.out.println(
+								"\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
 
-			break;
+					} else if (opcao.equals("4")) {
+						System.out.println("Saindo do Game...");
+						acabou = true;
+					} else {
+						System.out.println("Opção inválida");
+					}
 
-		case 2:
+				} while (acabou != true);
 
-			numeroUm = new Chaves();
+				break;
 
-			System.out.println("Chaves...");
+			case 2:
 
-			do {
+				numeroUm = new Chaves();
 
-				System.out
-						.println("\nEscolha com quem decorar ou cancele:\n1 Parênteses\n2 Chaves\n3 Colchetes\n4 Sair");
-				opcao = leitor.nextLine();
+				System.out.println("Chaves...");
 
-				if (opcao.equals("1")) {
+				do {
 
-					numeroUm = new ParentesesDecorator(numeroUm);
-					System.out.println("\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
+					System.out.println(
+							"\nEscolha com quem decorar ou cancele:\n1 Parênteses\n2 Chaves\n3 Colchetes\n4 Sair");
+					opcao = leitor.nextLine();
 
-				} else if (opcao.equals("2")) {
+					if (opcao.equals("1")) {
 
-					numeroUm = new ChavesDecorator(numeroUm);
-					System.out
-							.println("\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
+						numeroUm = new ParentesesDecorator(numeroUm);
+						System.out.println(
+								"\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
 
-				} else if (opcao.equals("3")) {
+					} else if (opcao.equals("2")) {
 
-					numeroUm = new ColchetesDecorator(numeroUm);
-					System.out.println("\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
+						numeroUm = new ChavesDecorator(numeroUm);
+						System.out.println(
+								"\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
 
-				} else if (opcao.equals("4")) {
-					System.out.println("Saindo do Game...");
-					acabou = true;
-				}
-			} while (acabou != true);
-			break;
-		case 3:
+					} else if (opcao.equals("3")) {
 
-			numeroUm = new Colchetes();
+						numeroUm = new ColchetesDecorator(numeroUm);
+						System.out.println(
+								"\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
 
-			System.out.println("Colchetes...");
+					} else if (opcao.equals("4")) {
+						System.out.println("Saindo do Game...");
+						acabou = true;
+					} else {
+						System.out.println("Opção inválida");
+					}
 
-			do {
+				} while (acabou != true);
+				break;
+			case 3:
 
-				System.out
-						.println("\nEscolha com quem decorar ou cancele:\n1 Parênteses\n2 Chaves\n3 Colchetes\n4 Sair");
-				opcao = leitor.nextLine();
+				numeroUm = new Colchetes();
 
-				if (opcao.equals("1")) {
+				System.out.println("Colchetes...");
 
-					numeroUm = new ParentesesDecorator(numeroUm);
-					System.out
-							.println("\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
+				do {
 
-				} else if (opcao.equals("2")) {
+					System.out.println(
+							"\nEscolha com quem decorar ou cancele:\n1 Parênteses\n2 Chaves\n3 Colchetes\n4 Sair");
+					opcao = leitor.nextLine();
 
-					numeroUm = new ChavesDecorator(numeroUm);
-					System.out
-							.println("\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
+					if (opcao.equals("1")) {
 
-				} else if (opcao.equals("3")) {
+						numeroUm = new ParentesesDecorator(numeroUm);
+						System.out.println(
+								"\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
 
-					numeroUm = new ColchetesDecorator(numeroUm);
-					System.out
-							.println("\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
+					} else if (opcao.equals("2")) {
 
-				} else if (opcao.equals("4")) {
-					System.out.println("Saindo do Game...");
-					acabou = true;
-				}
-			} while (acabou != true);
+						numeroUm = new ChavesDecorator(numeroUm);
+						System.out.println(
+								"\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
 
+					} else if (opcao.equals("3")) {
+
+						numeroUm = new ColchetesDecorator(numeroUm);
+						System.out.println(
+								"\nDescrição: " + numeroUm.getDescricao() + "\nImpressão: " + numeroUm.imprimir());
+
+					} else if (opcao.equals("4")) {
+						System.out.println("Saindo do Game...");
+						acabou = true;
+					} else {
+						System.out.println("Opção inválida");
+					}
+
+				} while (acabou != true);
+				break;
+				
+		    default:
+		    	System.out.println("Opção inválida");
+		    	
 		}
 		leitor.close();
 	}
